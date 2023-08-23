@@ -4,12 +4,12 @@ import java.util.PriorityQueue;
 public class Shop extends PriorityQueue<Toy> {
     private PriorityQueue<Toy> toys;
 
-    public Shop() {
-
+    public Shop(PriorityQueue<Toy> toys) {
+        this.toys =toys;
     }
 
-    public void addToy(int id, String name, int quantity, int freq) {
-        Toy toy = new Toy(id, name, quantity, freq);
+    public void addToy(String name, int quantity, int freq) {
+        Toy toy = new Toy(name, quantity, freq);
         toys.add(toy);
     }
 
@@ -18,12 +18,15 @@ public class Shop extends PriorityQueue<Toy> {
         return "Shop" + "\n" + toys;
     }
 
-    public PriorityQueue<Toy> getToys() {
-        return toys;
+    public void getToy() {
+        if (!this.toys.isEmpty()) {
+            Toy prize = toys.poll();
+            if (prize.getQuantity() > 1) {
+                prize.decreaseQuantity();
+                this.toys.add(prize);
+            }
+        } else {
+            System.out.println("Очередь пустая. Добавьте элемент");
+        }
     }
-
-    public void setToys(PriorityQueue<Toy> toys) {
-        this.toys = toys;
-    }
-
 }

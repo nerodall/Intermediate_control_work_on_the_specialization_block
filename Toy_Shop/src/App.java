@@ -1,15 +1,17 @@
-
+import java.util.PriorityQueue;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Shop shop = new Shop();
-        shop.addToy(3, "doll", 1, 50);
-        shop.addToy(1, "robot", 2, 90);
-        shop.addToy(2, "car", 2, 100);
-        shop.addToy(5, "red car", 1, 90);
-        
-        System.out.println(shop.toString());
-        
+        PriorityQueue<Toy> queueToy = new PriorityQueue<>();
+        Shop shop = new Shop(queueToy);
+        shop.addToy("doll", 100, 100);
+        shop.addToy("robot", 100, 90);
+        shop.addToy("car", 100, 100);
+        shop.addToy("red car", 100, 15);
+
+        System.out.println(shop);
+        shop.getToy();
+        System.out.println(shop);
 
     }
 }

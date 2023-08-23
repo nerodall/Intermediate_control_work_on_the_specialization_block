@@ -1,13 +1,13 @@
 
 public class Toy implements Comparable<Toy> {
-
+    private static int lastId = 0;
     private int id;
     private String name;
     private int quantity;
     private int freq;
 
-    public Toy(int id, String name, int quantity, int freq) {
-        this.id = id;
+    public Toy(String name, int quantity, int freq) {
+        this.id = ++lastId;
         this.name = name;
         this.quantity = quantity;
         this.freq = freq;
