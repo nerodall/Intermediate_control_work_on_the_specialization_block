@@ -8,11 +8,11 @@ public class App {
         Shop shop = new Shop(queueToy);
         WriteFile wf = new WriteFile();
         wf.clearFile();
-        /// Если не хочется каждый раз вносить список
+        /// Если не хочется каждый раз вносить список руками - раскоментировать 
 
-        shop.addToy("doll", 3, 60);
-        shop.addToy("robot", 2, 20);
-        shop.addToy("car", 1, 20);
+        // shop.addToy("Конструктор", 3, 60);
+        // shop.addToy("Робот", 2, 20);
+        // shop.addToy("Кукла", 2, 20);
 
         Scanner in = new Scanner(System.in);
         Integer input;
@@ -55,17 +55,13 @@ public class App {
                         }
                         System.out.println();
                     }
+                    else{
+                        System.out.println("Список пуст!!!\n");
+                        
+                    }
                     break;
             }
         }
 
     }
 }
-/// to do
-
-/**
- * создать класс реализации интерфейса программы, завернуть все в while. Сделать
- * java doc
- * ограничение по вводу процентов от 1 до 100
- * 
- */
